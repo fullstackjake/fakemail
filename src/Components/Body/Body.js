@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Emails from './Emails'
+import './Body.css'
 
 class Body extends Component {
   render() {
