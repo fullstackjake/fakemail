@@ -20,17 +20,18 @@ class Head extends Component {
             <img className="logospace__logo" src={logo} alt="" />
           </div>
         </div>
-
-        <div className="header__search">
-          <img className="glass" src={glass} alt="" />
-          <form action="" className="header__form">
-            <input
-              className="header__search--searchInput"
-              type="text"
-              placeholder="Search"
-            />
-          </form>
-          <img className="searchDrop" src={searchDrop} alt="" />
+        <div className="centerHead">
+          <div className="header__search">
+            <img className="glass" src={glass} alt="" />
+            <form action="" className="header__form">
+              <input
+                className="header__search--searchInput"
+                type="text"
+                placeholder="Search"
+              />
+            </form>
+            <img className="searchDrop" src={searchDrop} alt="" />
+          </div>
         </div>
         <div className="header__settings">
           <div className="settings">
