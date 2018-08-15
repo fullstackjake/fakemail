@@ -17,7 +17,7 @@ class Head extends Component {
             </span>
           </div>
           <div className="logospace">
-            <img className="logospace__logo" src={logo} alt="" />
+            {/* <img className="logospace__logo" src={logo} alt="" /> */}
           </div>
         </div>
         <div className="centerHead">
