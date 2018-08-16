@@ -1,13 +1,12 @@
 .emailContainer {
-  /* width: 800px; */
   box-sizing: border-box;
-  /* background-color: red; */
   border: 1px solid #000;
   border-bottom: none;
   display: flex;
   flex-direction: row;
   align-items: center;
   overflow: hidden;
+  padding: 10px 0;
 }
 
 .emailContainer:last-child {
@@ -18,6 +17,10 @@
   flex-basis: auto;
   flex-shrink: auto;
   box-sizing: border-box;
+}
+
+.emailCheckbox {
+  padding: 0 14px 0 10px;
 }
 
 .gCheckbox {
@@ -33,21 +36,41 @@
   background-size: cover;
 }
 
+.emailFavorites {
+  padding-right: 10px;
+}
+
+.emailSender {
+  flex-basis: 168px;
+  max-width: 168px;
+  width: 168px;
+  padding-right: 32px;
+}
+
+.emailSender__sender {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  font-size: 0.875rem;
+  color: #202124;
+}
+
 .emailbody {
   flex-basis: 0px;
   overflow: hidden;
-  overflow-x: hidden;
-  overflow-y: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   -webkit-box-flex: 1 1 0;
   -webkit-flex: 1 1 0;
   flex: 1 1 0;
-  padding: 5px;
+  padding-right: 10px;
+  color: #5f6368;
 }
 
 .subject {
   font-weight: bold;
+  font-size: 0.875rem;
+  color: #202124;
 }
 
 .emailBody__text {
@@ -56,7 +79,27 @@
   white-space: nowrap;
   -webkit-box-flex: 1 1 0;
   -webkit-flex: 1 1 0;
-  /* background-color: blue; */
   flex-basis: auto;
   flex-shrink: 8;
+  font-size: 0.875rem;
+}
+
+.dateContainer {
+  min-width: 60px;
+  /* padding: 0 20px; */
+}
+
+.date {
+  padding: 0px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #202124;
+}
+
+.read {
+  background-color: #f5f7f7;
+}
+
+.read div > * {
+  font-weight: normal !important;
 }

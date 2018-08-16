@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './Header.css'
-import logo from './logo.png'
+// import logo from './logo.png'
 import glass from './glass.svg'
 import searchDrop from './drop.svg'
 

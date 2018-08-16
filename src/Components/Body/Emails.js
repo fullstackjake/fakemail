@@ -9,7 +9,6 @@ class Emails extends Component {
   render() {
     return (
       <div className="Emails">
-        <h1>Hello From Emails</h1>
         <div>
           {emailData.map((email, index) => <Email key={index} email={email} />)}
         </div>
