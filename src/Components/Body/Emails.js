@@ -8,9 +8,24 @@ const emailData = emails.messages
 class Emails extends Component {
   constructor(props) {
     super(props)
-    this.state = { readingEmail: false }
+
+    this.state = { readingEmail: false, emailStatus: 'unread' }
+    this.toggleEmailView = this.toggleEmailView.bind(this)
+    this.openEmail = this.openEmail.bind(this)
     this.closeEmail = this.closeEmail.bind(this)
     this.readEmail = this.readEmail.bind(this)
+  }
+
+  toggleEmailView() {
+    let emailState = this.props.emailStatus === 'read' ? 'unread' : 'read'
+    this.setState({ emailStatus: emailState })
+    console.log('Clicked!!!')
+  }
+
+  openEmail() {
+    // this.toggleEmailView()
+    this.props.readEmail(this.props.email.id)
+    console.log('Gotta go fast')
   }
 
   closeEmail() {
@@ -24,7 +39,7 @@ class Emails extends Component {
   readEmail(emailID) {
     console.log('Hey')
     if (emailID) {
-      console.log(emailID)
+      this.setState({ readingEmail: true })
     }
   }
 
@@ -35,7 +50,12 @@ class Emails extends Component {
 
     if (readingEmail === false) {
       emailView = emailData.map((email, index) => (
-        <Email key={index} email={email} readEmail={this.readEmail} />
+        <Email
+          key={index}
+          emailStatus={this.state.emailStatus}
+          email={email}
+          readEmail={this.readEmail}
+        />
       ))
     } else {
       emailView = (

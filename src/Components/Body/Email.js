@@ -7,7 +7,7 @@ class Email extends Component {
     super(props)
     this.GOcode = this.GOcode.bind(this)
     this.toggleEmailView = this.toggleEmailView.bind(this)
-    this.openEmail - this.openEmail.bind(this)
+    this.openEmail = this.openEmail.bind(this)
     this.state = { emailStatus: 'unread' }
   }
 
@@ -30,15 +30,19 @@ class Email extends Component {
     console.log('Clicked!!!')
   }
 
-  openEmail() {
-    // this.toggleEmailView()
-    this.props.readEmail(this.props.email.id)
-    console.log('Gotta go fast')
+  openEmail(emailID) {
+    this.toggleEmailView()
+    this.props.readEmail(emailID)
   }
 
   render() {
     return (
-      <div className={this.state.emailStatus} onClick={this.openEmail()}>
+      <div
+        className={this.state.emailStatus}
+        onClick={() => {
+          this.openEmail(this.props.email.id)
+        }}
+      >
         <div className="emailContainer">
           {/* <p>{email.id}</p>
               <h2>{email.subject}</h2>
