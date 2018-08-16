@@ -8,8 +8,9 @@ const emailData = emails.messages
 class Emails extends Component {
   constructor(props) {
     super(props)
-    this.state = { readingEmail: true }
+    this.state = { readingEmail: false }
     this.closeEmail = this.closeEmail.bind(this)
+    this.readEmail = this.readEmail.bind(this)
   }
 
   closeEmail() {
@@ -18,17 +19,23 @@ class Emails extends Component {
     if (readingEmail) {
       this.setState({ readingEmail: false })
     }
+  }
 
-    // console.log('this');
+  readEmail(emailID) {
+    console.log('Hey')
+    if (emailID) {
+      console.log(emailID)
+    }
   }
 
   render() {
+    console.log('Rendered')
     const readingEmail = this.state.readingEmail
     let emailView
 
     if (readingEmail === false) {
       emailView = emailData.map((email, index) => (
-        <Email key={index} email={email} />
+        <Email key={index} email={email} readEmail={this.readEmail} />
       ))
     } else {
       emailView = (
