@@ -5,11 +5,23 @@ import Email from './Email'
 
 const emailData = emails.messages
 
+console.log(emailData)
+
+const emailToRead = emailData.filter(obj => {
+  return obj.id === '2'
+})
+console.log(emailToRead)
+// console.log(emailData);
+
 class Emails extends Component {
   constructor(props) {
     super(props)
 
-    this.state = { readingEmail: false, emailStatus: 'unread' }
+    this.state = {
+      readingEmail: false,
+      emailStatus: 'unread',
+      emailToRead: null
+    }
     this.toggleEmailView = this.toggleEmailView.bind(this)
     this.openEmail = this.openEmail.bind(this)
     this.closeEmail = this.closeEmail.bind(this)

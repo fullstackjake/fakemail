@@ -19,15 +19,9 @@ class Email extends Component {
     return text
   }
 
-  // readEmail() {
-  //   let emailState = this.state.emailStatus === 'unread' ? 'read' : 'unread'
-  //   this.setState({ emailStatus: emailState })
-  // }
-
   toggleEmailView() {
     let emailState = this.props.emailStatus === 'read' ? 'unread' : 'read'
     this.setState({ emailStatus: emailState })
-    console.log('Clicked!!!')
   }
 
   openEmail(emailID) {
