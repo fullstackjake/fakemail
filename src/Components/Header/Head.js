@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './Header.css'
-// import logo from './logo.png'
+import logo from './logo.png'
 import glass from './glass.svg'
 import searchDrop from './drop.svg'
 
@@ -17,7 +17,7 @@ class Head extends Component {
             </span>
           </div>
           <div className="logospace">
-            {/* <img className="logospace__logo" src={logo} alt="" /> */}
+            <img className="logospace__logo" src={logo} alt="" />
           </div>
         </div>
         <div className="centerHead">

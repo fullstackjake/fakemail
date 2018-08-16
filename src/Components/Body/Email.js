@@ -38,13 +38,6 @@ class Email extends Component {
         }}
       >
         <div className="emailContainer">
-          {/* <p>{email.id}</p>
-              <h2>{email.subject}</h2>
-              <h3>{email.sender}</h3>
-              <p>{email.body} </p>
-              <h5>{email.tags}</h5>
-              <h6>{email.date}</h6> */}
-
           <div className="emailCheckbox">
             <div className="gCheckbox" />
           </div>
@@ -66,10 +59,6 @@ class Email extends Component {
               {moment(this.props.email.date).format('MMM DD')}
             </span>
           </div>
-          {/* <div
-          className="emailBody__FullText"
-          dangerouslySetInnerHTML={{ __html: this.props.email.body }}
-        /> */}
         </div>
       </div>
     )

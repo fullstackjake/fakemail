@@ -2,15 +2,16 @@ import React, { Component } from 'react'
 import emails from './emails.json'
 import './Emails.css'
 import Email from './Email'
+import EmailReading from './EmailReading'
 
 const emailData = emails.messages
 
 console.log(emailData)
 
-const emailToRead = emailData.filter(obj => {
-  return obj.id === '2'
-})
-console.log(emailToRead)
+// const emailToRead = emailData.filter(obj => {
+//   return obj.id === '2'
+// })
+// console.log(emailToRead)
 // console.log(emailData);
 
 class Emails extends Component {
@@ -51,6 +52,7 @@ class Emails extends Component {
   readEmail(emailID) {
     console.log('Hey')
     if (emailID) {
+      this.setState({ emailToRead: emailID })
       this.setState({ readingEmail: true })
     }
   }
@@ -70,11 +72,22 @@ class Emails extends Component {
         />
       ))
     } else {
+      const emailToRead = emailData.filter(obj => {
+        return obj.id === this.state.emailToRead
+      })
+
+      const emailToReadParsed = emailToRead[0]
+
+      console.log(this.state.emailToRead)
+      console.log(emailToReadParsed)
+
       emailView = (
-        <h1>
-          I am reading and email{' '}
-          <button onClick={this.closeEmail}>Close</button>
-        </h1>
+        <EmailReading
+          sender={emailToReadParsed.sender}
+          body={emailToReadParsed.body}
+          subject={emailToReadParsed.subject}
+          closeEmail={this.closeEmail}
+        />
       )
     }
     return (
